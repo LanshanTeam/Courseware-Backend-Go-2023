@@ -10,8 +10,8 @@
 |  1   |       go 基础语法(1)       | 变量，常量，基本数据类型，运算符，流程控制，函数基础，fmt包  | 邓卓  |
 |  2   |       go 基础语法(2)       |                数组，切片，map，函数进阶，git                | 刘力延 |
 |  3   |  struct、指针、interface   |                 包，struct、指针、interface                  | 王丹力 |
-|  4   |     常见的库与初识开源     | strconv，time，os，context，(template)，(flag) / 了解 github 开源 | 赵锡军 |
-|  5   | goruntine、channel、select |                       go 语言并发编程                        | 梁伟健 |
+|  4   |     常见的库与初识开源     | strconv，time，os，context，(template)，(flag) / 了解 github 开源 | 梁伟健 |
+|  5   | goroutine、channel、select |                       go 语言并发编程                        | 赵锡军 |
 |  6   |          web 开发          |            net/http 库，gin，cookie，session，jwt            | 廖淑娴 |
 |  7   |           mysql            |                     基本概念，sqlx，gorm                     | 王俊杰 |
 |  8   |       redis，mongodb       |         基本概念，缓存策略，go 操作 redis 和 mongodb         | 单培民 |
