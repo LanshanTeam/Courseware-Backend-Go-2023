@@ -115,7 +115,7 @@ func UnixMicro(usec int64) Time         // 微秒
 
 >时间格式化为字符串
 
-Go语言中格式化时间模板不是常见的 `Y-m-d H:M:S` 而是使用Go语言的诞生时间 2006 年 1 月 2 号 15 点 04 分 05 秒，或者使用占位符
+Go语言中格式化时间模板不是常见的 `Y-m-d H:M:S` 而是使用Go语言的诞生时间 2006 年 1 月 2 号 15 点 04 分 05 秒，也就是 `2006-01-02 15:04:05`
 
 ```go
 func (t Time) Format(layout string) string
