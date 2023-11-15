@@ -1158,7 +1158,7 @@ type timestampWriter struct {
 }
 
 func (tw *timestampWriter) Write(p []byte) (n int, err error) {
-	// 添加时间戳
+	// 添加时间戳和时间
 
 	// 输出到文件
 }
@@ -1188,7 +1188,9 @@ TIPS:
 
 ~~gayhub~~ gitHub 不仅仅是一个代码托管平台，还是一个面向开发者的社交网络。默认的个人主页十分单调，学习如何美化你的 Homepage，介绍你自己，让更多的人了解你吧！
 
-可以按着这篇博客进行操作(https://blog.csdn.net/qq_44231797/article/details/129251980)，不作要求自己感兴趣的可以玩一下
+可以按着这篇博客进行操作 https://blog.csdn.net/qq_44231797/article/details/129251980
+
+不作要求自己感兴趣的可以玩一下
 
 提交方式:    mull1on0910@gmail.com
 
