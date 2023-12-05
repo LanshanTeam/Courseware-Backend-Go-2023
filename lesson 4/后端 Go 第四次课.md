@@ -222,8 +222,8 @@ func main() {
     fmt.Println("截断到小时的时间：", truncatedTime)  
   
     // 格式化时间输出  
-    formatedTime := now.Format("2006-01-02 15:04:05")  
-    fmt.Println("格式化时间：", formatedTime)  
+    formattedTime := now.Format("2006-01-02 15:04:05")  
+    fmt.Println("格式化时间：", formattedTime)  
     // 解析字符串为时间  
     timeStr := "2023-11-15 12:30:45"  
     parsedTime, err := time.Parse("2006-01-02 15:04:05", timeStr)  
@@ -931,8 +931,7 @@ func main() {
     }  
     defer file.Close()  
   
-    // 初始化 bufio.Writer    
-	writer := bufio.NewWriter(file)  
+    // 初始化 bufio.Writer    writer := bufio.NewWriter(file)  
   
     // 写入数据到缓冲区  
     data := []byte("Hello, Golang!")  
