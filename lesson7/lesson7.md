@@ -159,7 +159,7 @@ root是你的用户名
 下面来一些 SQL 语句的示例
 
 ```sql
-creat database student;
+create database student;
 //创建数据库
 
 drop database school;
@@ -182,7 +182,7 @@ use school
 
 CREATE TABLE `student` (
 		`id` BIGINT(20) NOT NULL AUTO_INCREMENT,
-		`name` VARCHAR(20) DEFAULT '0',
+		`name` VARCHAR(20) DEFAULT '1',
 		`sex` VARCHAR(8) DEFAULT '',
 		`age` INT(11) ,
 		PRIMARY KEY(`id`)
@@ -358,7 +358,7 @@ Go官方为我们提供了 **database/sql** 包保证SQL或类SQL数据库的泛
 首先下载 MySQL 驱动
 
 ```go
-go get -u github.com/go-sql-driver/mysqlsqlx 
+go get -u github.com/go-sql-driver/mysql
 ```
 
 然后安装 sqlx
@@ -374,7 +374,7 @@ package main
 
 import (
     _ "github.com/go-sql-driver/mysql" //要导入相应驱动包，否则会报错
-	"github.com/jmoiron/sqlxl"					   
+	"github.com/jmoiron/sqlx"					   
 	"fmt"
 )
 
