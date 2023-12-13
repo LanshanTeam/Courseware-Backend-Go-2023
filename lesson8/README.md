@@ -981,7 +981,7 @@ Zset 类型的底层数据结构是由**压缩列表或跳表**实现的：
 
 
 
-##### ZRANGENYSCORE
+##### ZRANGEBYSCORE
 
 `ZRANGEBYSCORE key min max [WITHSCORES] [LIMIT offset count]`
 
