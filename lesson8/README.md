@@ -1277,9 +1277,6 @@ BigKey内存占用较多，因此即便我们使用的是删除操作，删除Bi
 #### Cache Aside（旁路缓存）策略
 
 Cache Aside（旁路缓存）策略是最常用的，应用程序直接与「数据库、缓存」交互，并负责对缓存的维护，该策略又可以细分为「读策略」和「写策略」。
-
-![img](https://img-blog.csdnimg.cn/img_convert/6e3db3ba2f829ddc14237f5c7c00e7ce.png)
-
    
   <img src="./images/1.png">
 
