@@ -1335,7 +1335,15 @@ MongoDB的一个实例可以拥有多个相互独立的数据库（database）�
 
 MongoDB 将数据存储为一个文档，数据结构由键值(key=>value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。
 
-<img src="./images/4.png">
+| SQL术语/概念 | MongoDB术语/概念 | 解释/说明 |
+| --- | --- | --- |
+| database | database | 数据库 |
+| table | collection | 数据库表/集合 |
+| row | document | 数据记录行/文档 |
+| column | field | 数据字段/域 |
+| index | index | 索引 |
+| table joins |  | 表连接,MongoDB不支持 |
+| primary key | primary key | 主键,MongoDB自动将_id字段设置为主键 |
 
 #### 数据库
 
@@ -1394,7 +1402,17 @@ MongoDB不但区分类型，而且区分大小写。
 
 在概念上MongoDB的文档与JavaScript中的对象相近，因而可以认为它类似与JSON。MongoDB在JSON六种数据类型（null，布尔，数字、字符长、对象和数组）的基础上上添加了一些其他数据类型，以实现对时间、浮点数、正则函数等的操作。
 
-<img src="./images/5.png">
+| 数据类型 | 例子 | 描述 |
+| --- | --- | --- |
+| String | { "x" : "foot" } | 字符串。存储数据常用的数据类型。在 MongoDB 中，UTF-8 编码的字符串才是合法的。 |
+| Integer | { "x" : 1 } | 整型数值。用于存储数值。根据你所采用的服务器，可分为 32 位或 64 位。 |
+| Boolean | { "x" : true } | 布尔值。用于存储布尔值（真/假）。 |
+| Double | { "x" : 3.14 } | 双精度浮点值。用于存储浮点值。 |
+| Array | { "x" : [ "a" , "b" ] } | 用于将数组或列表或多个值存储为一个键。 |
+| Timestamp |  | 时间戳。记录文档修改或添加的具体时间。 |
+| Object | { "x" : { "y" : "foot" } } | 用于内嵌文档。 |
+| Null | { "x" : null } | 用于创建空值。 |
+
 
 
 ## Go 操作Redis
