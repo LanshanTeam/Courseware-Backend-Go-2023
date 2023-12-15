@@ -1,0 +1,6 @@
+version: '3'
+services:
+  myapp:
+    image: liuxian123/heelo:latest
+    ports:
+      - "8080:8080"  # 如果你的 Go 程序在容器中监听的端口是 8080，将其映射到宿主机的 8080 端口
