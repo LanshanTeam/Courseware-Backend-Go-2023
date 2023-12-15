@@ -1,7 +1,10 @@
 ## 基础入门
+
 ### 虚拟化介绍
+
 虚拟化的核心是对资源的抽象
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/33645769/1702438754171-97bdd4a8-db32-4328-bb3f-9095d25b2360.png#averageHue=%23e7e4df&clientId=u9709a842-eab8-4&from=paste&height=367&id=u5057db18&originHeight=808&originWidth=2160&originalType=binary&ratio=2.200000047683716&rotation=0&showTitle=false&size=504397&status=done&style=none&taskId=u856ae5dd-554f-4a08-8d27-ffea9210383&title=&width=981.8181605378463)
+
 ###  Docker 为什么比虚拟化更加轻量？
 传统方式是在硬件层面实现虚拟化，需要有额外的虚拟机管理应用和虚拟机操作系统 
 层。 Docker 容器是在操作系统层面上实现虚拟化，直接复用本地主机的操作系统，因此更加轻量级。
