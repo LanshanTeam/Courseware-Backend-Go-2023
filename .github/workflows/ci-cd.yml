@@ -1,0 +1,51 @@
+name: Docker Build and Push a Simple # 工作流程的名称
+
+on:
+  workflow_dispatch:  # 通过 workflow_dispatch 手动触发工作流程
+    inputs:
+      parameter_name:
+        description: 'go'
+        required: true
+
+jobs:
+  build-and-push-hello:  # 构建和推送 hello 的作业
+    runs-on: ubuntu-latest  # 在 Ubuntu 最新版本上运行
+
+    steps:
+      - name: Checkout the repository  # 检出存储库
+        uses: actions/checkout@v2
+
+      - name: Login to Docker Hub  # 登录到 Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}  # 使用存储库的 Docker 用户名
+          password: ${{ secrets.DOCKERHUB_TOKEN }}  # 使用存储库的 Docker 访问令牌
+
+      - name: Set up QEMU  # 设置 QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx  # 设置 Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Create and push chat-rpc Docker image  # 创建并推送 chat-rpc Docker 镜像
+        uses: docker/build-push-action@v2
+        with:
+          context: .  # Docker 上下文路径
+          file: ./lesson10/docker-compose.yaml  # Dockerfile 文件路径
+          push: true  # 推送镜像到 Docker Hub
+          tags: liuxian123/hello:latest  # 镜像的标签
+          platforms: linux/amd64,linux/arm64  # 构建多个架构的镜像
+
+      - name: executing remote ssh commands using password  # 使用密码执行远程 SSH 命令
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.HOST }}  # SSH 主机
+          username: ${{ secrets.USERNAME }}  # SSH 用户名
+          password: ${{ secrets.PASSWORD }}  # SSH 密码
+          port: ${{ secrets.PORT }}  # SSH 端口
+          script: |
+            cd /home/project/docker_test  # 执行远程服务器上的命令，此处进入特定目录
+            docker-compose stop hello
+            docker-compose rm -f hello
+            docker image rm liuxian123/hello:latest
+            docker-compose  up -d hello
