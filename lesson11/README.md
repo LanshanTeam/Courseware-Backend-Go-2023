@@ -61,6 +61,7 @@ Go 在 1.21.3 中新推出了 slog ，但是无论从自由度还是性能上都
 我们需要这么一个接口，简化如下
 
 > http_method : GET
+> 
 > Path : /video/feed
 
 前端来请求这个接口，就可以获得视频流
@@ -78,9 +79,9 @@ Go 在 1.21.3 中新推出了 slog ，但是无论从自由度还是性能上都
   ```json
   {
     "video_list": [
-      { "video_name":"1111",video_path":"https://xxxx" , "username":"张三" },
-      { "video_name":"2222",video_path":"https://xxxx" , "username":"李四" },
-      { "video_name":"3333",video_path":"https://xxxx" , "username":"王五" }
+      { "video_name":"1111","video_path":"https://xxxx" , "username":"张三" },
+      { "video_name":"2222","video_path":"https://xxxx" , "username":"李四" },
+      { "video_name":"3333","video_path":"https://xxxx" , "username":"王五" }
     ]
   }
   ```
@@ -153,6 +154,7 @@ Go 在 1.21.3 中新推出了 slog ，但是无论从自由度还是性能上都
 在软件架构中，经典三层架构自顶向下由用户界面层、业务逻辑层、数据访问层组成。在提出该分层架构的时代，多数系统往往较为简单，本质上都是一个单体架构的数据库管理系统。这种分层架构有效地隔离了业务逻辑与数据访问逻辑，使得这两个不同关注点能够相对自由和独立地演化。经典的三层架构如下所示：
 
 ![structure1](./images/structure1.png)
+
 **分层的设计原则是：保证同一层的组件处于同一个抽象层次**。即所谓的“单一抽象层次原则”。这一原则可以运用到分层架构中。比如下图所示：
 
 ![structure2](./images/structure2.png)
@@ -527,7 +529,7 @@ https://example.org/api/
 
 - **version**：API版本号，有些版本号放置在头信息中也可以，通过控制版本号有利于应用迭代。
 
-```JavaScript
+```
 https://api.example.com/v1/
 ```
 
@@ -587,7 +589,7 @@ DELETE /collection/resource：从服务器删除资源
 
 使用相同的 HTTP 响应结构，推荐使用下列结构：
 
-```JSON
+```
 {
 
   "code": 0,            # 错误码，请求成功时返回0
@@ -644,7 +646,7 @@ POST: http://www.goodhr.com/api/v1/companies/66/employees
 
 请求体
 
-```Plain
+```Json
 {
     "firstname": "Steve",
     "lastname": "Bill",
