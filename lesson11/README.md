@@ -54,7 +54,7 @@ Go 在 1.21.3 中新推出了 slog ，但是无论从自由度还是性能上都
 
 ![bilibili2](./images/bilibili2.png)
 按下 f12 进入开发者模式然后刷新页面，我们可以看到第一个请求为
-![bilibili3](/Users/violapioggia/GoProjects/Courseware-Backend-Go-2023/lesson11/images/bilibili3.png)
+![bilibili3](./images/bilibili3.png)
 所以当我们敲下这个网址，整个页面才会为我们加载，剩下的很多乱七八糟的就不多赘述了，学后端的不懂这些（
 
 那我们后端需要为前端提供哪些东西呢？还是以 B 站首页为例，首先第一个我们需要提供很多视频给用户看
