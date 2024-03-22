@@ -10,7 +10,7 @@ DDD 分层架构中的要素其实和三层架构类似，只是在 DDD 分层�
 
 [DDD 实战课](http://learn.lianglianglee.com/专栏/DDD实战课)
 
-![img](https://lanshanteam.feishu.cn/space/api/box/stream/download/asynccode/?code=MTU0MmViYWYwZjNjMjM3ZDFlOWU1MmQ3NGMwNDg1MWNfMERnVU5UMndWVHJVYTVWOWlHYWFvdDB2YlhLcExzVldfVG9rZW46T0xZRWJONzFrb0x6Y0Z4VEN2OWNkVzlHbmFiXzE3MTEwOTA0MzI6MTcxMTA5NDAzMl9WNA)
+![img](./images/java_error_in_idea.png)
 
 DDD 分层架构在用户接口层引入了 DTO，给前端提供了更多的可使用数据和更高的展示灵活性。
 
@@ -30,8 +30,7 @@ DDD 分层架构对三层架构的业务逻辑层进行了更清晰的划分，�
 
 而随着新需求的提出和业务的发展，这些小单体微服务会慢慢膨胀起来。当有一天你发现这些膨胀了的微服务，有一部分业务功能需要拆分出去，或者部分功能需要与其它微服务进行重组时，你会发现原来这些看似清晰的微服务，不知不觉已经摇身一变，变成了臃肿油腻的大单体了，而这个大单体内的代码依然是高度耦合且边界不清的。
 
-![img](https://lanshanteam.feishu.cn/space/api/box/stream/download/asynccode/?code=Nzg2Zjc0YTAxNGNlNWU1NmM0MDQwNGM5YzY5ODg4MjRfN1NZZ2RuQU5EbzdUbzZPWTNSZ3JUSWRrdVNKdWp2Um9fVG9rZW46WGJIOWJJWDJKb0FzZlF4NG1CTWNVeFhMbnViXzE3MTEwOTA0MzI6MTcxMTA5NDAzMl9WNA)
-
+![img](./images/1280X1280.PNG)
 “辛辛苦苦好多年，一夜回到解放前啊！”这个时候你就需要一遍又一遍地重复着从大单体向单体微服务重构的过程。想想，这个代价是不是有点高了呢？
 
 其实这个问题已经很明显了，那就是边界。
@@ -46,8 +45,7 @@ DDD 分层架构对三层架构的业务逻辑层进行了更清晰的划分，�
 
 当然，还要记住一点，微服务内聚合之间的服务调用和数据依赖需要符合高内聚松耦合的设计原则和开发规范，否则你也不能很快完成微服务的架构演进。
 
-![img](https://lanshanteam.feishu.cn/space/api/box/stream/download/asynccode/?code=OWIxM2U2NjJmMGJhOTI0OGE1YjEzZWM1YzhjYzY1MWFfR3FWejN6cXQwblRQYmF3dEtOZ1dGQW1NMUtYTnNkbTJfVG9rZW46RGlRSWJxUG85b1RkeW54cGVGV2NMcnhHbjNYXzE3MTEwOTA0MzI6MTcxMTA5NDAzMl9WNA)
-
+![img](./images/1280X1280%20(1).PNG)
 ### **微服务设计**原则
 
 微服务设计原则中，如高内聚低耦合、复用、单一职责等这些常见的设计原则在此就不赘述了，主要强调下面这几条：
@@ -87,14 +85,12 @@ DDD 分层架构对三层架构的业务逻辑层进行了更清晰的划分，�
 - 硬编码：代码中写死服务地址（ip+port）。
 - 给每个服务分配一个唯一的名字，并将其对应的地址（ip+port）一起写入configure文件。 所有服务的名字 : 地址都被列在这个配置文件中，一目了然。需要的时候，就根据名字来查询对应的地址。
 
-![img](https://lanshanteam.feishu.cn/space/api/box/stream/download/asynccode/?code=M2Q4N2Q0MTViNTg4MzU4ODNkZWYyMzE2MjJlZThiYjRfbDJrWXhxWXJ4WDlmdnFENjlGN3FQWE1IeFJaTmszVHlfVG9rZW46V2p6Z2JyYktCb0FCbzZ4OGx2VmM0eVlFbm9iXzE3MTEwOTA0MzI6MTcxMTA5NDAzMl9WNA)
-
+![img](./images/af08e7a2-c965-4084-a417-ada9ee07d899.webp)
 配置形式的地址管理
 
 如果地址发生变更，则更新所有服务机器上的配置文件。
 
-![img](https://lanshanteam.feishu.cn/space/api/box/stream/download/asynccode/?code=MWViOWY5NWQ3OWFjYjVkYTNmNGVlYmNjNmYxZThlZTNfQk9wQUpESDNtTGFTMW5MdjNrcmdaZVhOSDdhd3p2MGFfVG9rZW46V3lVYmJvdnZab0dlT1B4NkdOSWN5OFoxbnllXzE3MTEwOTA0MzI6MTcxMTA5NDAzMl9WNA)
-
+![img](./images/4e760b81-7bfb-437a-83f7-c054ea6b414c.webp)
 配置更新
 
 #### DNS 查询
@@ -109,10 +105,9 @@ DDD 分层架构对三层架构的业务逻辑层进行了更清晰的划分，�
 
 此时，我们就需要引入一种称为 ServiceRegistry 的服务注册与发现的组件。本质上，我们就是需要一种随时注册、更新、获取并监听其他服务地址变更的机制。
 
-![img](https://lanshanteam.feishu.cn/space/api/box/stream/download/asynccode/?code=MzU4ODZkOWUwNzk0ODczZDM0MDMxNzRkZGZiNWEwODRfcmhqaDhhVEhpWG00QWdPRzNqeFQxWnFvN2RHbUNUUTlfVG9rZW46WVh0eGIyTk5Nb3k0U3l4YlBwV2NydFJ0bnpjXzE3MTEwOTA0MzI6MTcxMTA5NDAzMl9WNA)
+![img](./images/caec8684-c117-4521-a6bd-a124a795e819.webp)
 
-![img](https://lanshanteam.feishu.cn/space/api/box/stream/download/asynccode/?code=ZTE1MTdjMzI4MjI2YTdjNTU5NThhMGI0NTljYmU3ZWRfZUlPSGlNaW9XMzc2cDEwQjZUb1hvdEhFU1ptZUVYc1FfVG9rZW46Tm5MUGJUVDR6bzFoNW94dU9OVWNISFBObkZlXzE3MTEwOTA0MzI6MTcxMTA5NDAzMl9WNA)
-
+![img](./images/dfbb50b0-6a41-4045-9e47-6a77ffc2d5b3.png)
 #### 服务发现有什么优势？
 
 ##### 灵活配置
@@ -123,14 +118,12 @@ DDD 分层架构对三层架构的业务逻辑层进行了更清晰的划分，�
 
 如果说直接用 ip+port 的形式或者 DNS ，如果一个实例挂掉了，调用者依然会请求这个地址，然后就会返回错误，造成了很大的资源浪费、降低了易用性。但是使用了服务发现的话，服务发现中心会定期地对各个实例进行健康检查，如果发现故障则作上标记或者直接下线。
 
-![img](https://lanshanteam.feishu.cn/space/api/box/stream/download/asynccode/?code=NTJmNzBlN2NiOWI3MmNiMWFkZjRjNWVjNTA1NjEyZjVfaE8yZkJTNWdUeXk2SGtQV0tqUEQ0SjVwZVd4VExVUHNfVG9rZW46WGRCdmJqZXZ4b24xUjd4SlRyUWM3eVdoblhiXzE3MTEwOTA0MzI6MTcxMTA5NDAzMl9WNA)
-
+![img](./images/7f37cdb4-faa1-4341-9daa-9f24646f4443.png)
 ##### 简单的配置中心
 
 以 consul 和 nacos 为例，consul 允许存储 kv 键值对，nacos 也允许 存储 json 、yaml 等格式的数据，也就是说在不需要高级配置中心功能（灰度发布等等）的情况下使用服务注册中心来存储配置也是一个不错的选择。
 
-![img](https://lanshanteam.feishu.cn/space/api/box/stream/download/asynccode/?code=ZjMyODI5MDYxMDRjNTkzMjc5ZTA5OGVlNjNmZmQzOWJfZVZ6aWJJMEVvaXYwVDZKeGs5VXlRY3pSNmZZb1E5aTNfVG9rZW46S0pTa2JZazJtbzdrVFB4eU50N2NGdEQ1bjRkXzE3MTEwOTA0MzI6MTcxMTA5NDAzMl9WNA)
-
+![img](./images/d0a32a7c-8b86-4083-a156-4570db6f3018.png)
 ##### 负载均衡
 
 - 随机负载均衡：从可用的服务实例中随机选择一个来处理请求，简单且容易实现，但无法保证均衡和高性能。
@@ -142,9 +135,9 @@ DDD 分层架构对三层架构的业务逻辑层进行了更清晰的划分，�
 
 ###### 一致性哈希算法实现负载均衡
 
-![img](https://lanshanteam.feishu.cn/space/api/box/stream/download/asynccode/?code=NDg3NTI5ODFlMTUxY2ZmODMyMDJmZGVlODI1ODU4NTNfREtwMlgxdEFTNG02cGd4WWI2UVhhZmIzZFg5aHVmbUxfVG9rZW46VTJ4ZGIyTjJOb2MzYjh4eEM1a2NpTGNMbnlkXzE3MTEwOTA0MzI6MTcxMTA5NDAzMl9WNA)
+![img](./images/930904ca-0525-41af-b5e5-314fd377dfce.png)
 
-![img](https://lanshanteam.feishu.cn/space/api/box/stream/download/asynccode/?code=MzlhMWU3MjA5MzAwNDk3ZDBiZTYwYTMzOTBmNmE5YjJfcjVOU1JxSXAzWFJnNEhBZDgxdXU2VjlPSk40allVYmxfVG9rZW46Q2QwTWJxY1JGb3FETlh4YVBxa2M0QjBqbnRnXzE3MTEwOTA0MzI6MTcxMTA5NDAzMl9WNA)
+![img](./images/398cdbe8-1006-48b3-bba6-b73768c02aca.png)
 
 参考资料：
 
