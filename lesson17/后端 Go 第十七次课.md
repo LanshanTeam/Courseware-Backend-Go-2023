@@ -277,14 +277,13 @@ Prometheus 的主要优势有：
 可以使用 Docker 快速部署
 
 ```shell
-docker run -d -p 9090:9090 --name prometheus \
---restart=always \
--v /data/prometheus/data/:/data \
--v /home/prometheus/config/prometheus.yml:/data/prometheus.yml \
-prom/prometheus:latest
+docker run \
+    -p 9090:9090 \
+    -v /path/to/prometheus.yml:/etc/prometheus/prometheus.yml \
+    prom/prometheus
 ```
 
-容器启动后，使用浏览器打开 [http://localhost:9090](http://localhost:9090/) 即可访问 Prometheus UI，这时候就可以在网页上添加数据源
+容器启动后，使用浏览器打开 [http://localhost:9090](http://localhost:9090/) 即可访问 Prometheus UI，如果想要添加数据源，需要配置 prometheus.yml
 
 ## 作业
 
